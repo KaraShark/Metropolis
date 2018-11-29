@@ -2,18 +2,18 @@ package de.hsmannheim.g22.metropolis.einwohner.mutanten;
 
 public class Schurke extends Mutant{
     private int einkommen;
-    private String superkraft;
+    private String schwaeche;
     
     public Schurke(){}
     
-    public Schurke(String name, String superkraft, int einkommen){
+    public Schurke(String name, String schwaeche, int einkommen){
         //name
-        this.superkraft = superkraft;
+        this.schwaeche = schwaeche;
         this.einkommen = einkommen;
         
     }
     
-    public String getSuperkraft(){
-        return this.superkraft;
+    public String getSchwaeche(){
+        return this.schwaeche;
     }
 }

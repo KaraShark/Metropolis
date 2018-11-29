@@ -8,10 +8,20 @@ public class Superheld extends Mutant{
         //name
         this.superkraefte = superkraefte;    
     }
-    public void kaempfe(Schurke schurke){
+    public boolean kaempfe(Schurke schurke){
+        boolean gewonnen = false;
+        
+        for(int i=0;i<superkraefte.length;i++){
+            if(superkraefte[i].equals(schurke.getSchwaeche())){
+                gewonnen = false;
+            }
+            gewonnen = true;
+        }
+        return gewonnen;
         
     }
     
+    //nicht ganz sicher
     public String[] getSuperkraefte(){
         for(int i=0;i<superkraefte.length;i++){
            System.out.print(superkraefte[i]);
