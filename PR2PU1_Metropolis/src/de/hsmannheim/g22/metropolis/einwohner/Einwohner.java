@@ -10,4 +10,8 @@ public class Einwohner {
     public Einwohner(String name) {
         this.name = name;
     }
+    
+    public String getName(){
+        return name;
+    }
 }
