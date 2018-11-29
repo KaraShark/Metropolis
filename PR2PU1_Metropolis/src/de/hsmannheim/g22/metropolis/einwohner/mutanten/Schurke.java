@@ -13,7 +13,23 @@ public class Schurke extends Mutant{
         
     }
     
+    public boolean kaempfe(Superheld superheld){
+        boolean gewonnen = false;
+        
+        for(int i=0;i<superheld.getSuperkraefte().length;i++){
+            if(schwaeche.equals(superheld.getSuperkraefte())){
+                gewonnen = false;
+            }
+            else{
+                gewonnen = true;
+            }
+            
+        }
+        return gewonnen;
+    }
+    
     public String getSchwaeche(){
         return this.schwaeche;
     }
+    
 }
