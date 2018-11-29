@@ -3,7 +3,7 @@ package de.hsmannheim.g22.metropolis.einwohner.menschen;
 import de.hsmannheim.g22.metropolis.einwohner.mutanten.Schurke;
 
 public class Richter extends Mensch {
-    private boolean istKorrupt = true;
+    private boolean istKorrupt = false;
     
     public Richter(){ }
     
@@ -12,8 +12,11 @@ public class Richter extends Mensch {
         this.istKorrupt = istKorrupt;
     }
 
-    public void verurteile(Schurke schurke){
-        
+    public boolean verurteile(Schurke schurke){
+        if(istKorrupt == true){
+           return false; 
+        }
+        return true;
     }
     
     public boolean getIstKorrupt(){
