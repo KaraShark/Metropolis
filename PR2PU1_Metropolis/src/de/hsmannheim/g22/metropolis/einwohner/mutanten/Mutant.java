@@ -4,6 +4,7 @@ import de.hsmannheim.g22.metropolis.einwohner.Einwohner;
 
 class Mutant extends Einwohner{
     private String superkraft;
+    
     public Mutant(){ }
     
     public Mutant(String name, String superkraft){
@@ -14,4 +15,8 @@ class Mutant extends Einwohner{
     public void kaempfe(Mutant mutant){
         
     }
+    
+    public String getSuperkraft() {
+		return superkraft;
+	}
 }

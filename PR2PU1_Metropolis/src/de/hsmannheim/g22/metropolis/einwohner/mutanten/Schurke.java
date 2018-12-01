@@ -32,4 +32,8 @@ public class Schurke extends Mutant{
         return this.schwaeche;
     }
     
+    public int getEinkommen() {
+		return einkommen;
+	}
+    
 }
