@@ -1,6 +1,7 @@
 package de.hsmannheim.g22.metropolis;
 
 import de.hsmannheim.g22.metropolis.einwohner.menschen.Buerger;
+import de.hsmannheim.g22.metropolis.einwohner.mutanten.Schurke;
 import de.hsmannheim.g22.metropolis.wirtschaft.steuern.Einkommensteuer;
 import de.hsmannheim.g22.metropolis.wirtschaft.steuern.Gewerbesteuer;
 import de.hsmannheim.g22.metropolis.wirtschaft.steuern.Koerperschaftsteuer;
@@ -9,28 +10,28 @@ import de.hsmannheim.g22.metropolis.wirtschaft.unternehmen.Personengesellschaft;
 
 public class Finanzamt {
 	private Buerger[] buerger;
+	private Schurke[] schurken;
 	private Syndikat[] syndikate;
 	private Kapitalgesellschaft[] kapGes;
 	private Personengesellschaft[] persGes;
 	
-	private Koerperschaftsteuer kst;
-	private Gewerbesteuer gwst;
-	private Einkommensteuer eks;
+	private Koerperschaftsteuer kst = new Koerperschaftsteuer();
+	private Gewerbesteuer gwst = new Gewerbesteuer();
+	private Einkommensteuer eks = new Einkommensteuer();
 	
-	public Finanzamt(Buerger[] buerger, Syndikat[] syndikate, Kapitalgesellschaft[] kapGes, Personengesellschaft[] persGes) {
+	public Finanzamt(Buerger[] buerger, Schurke[] schurken, Syndikat[] syndikate, Kapitalgesellschaft[] kapGes, Personengesellschaft[] persGes) {
 		this.buerger   = buerger;
 		this.syndikate = syndikate;
 		this.kapGes    = kapGes;
 		this.persGes   = persGes;
+		this.schurken  = schurken;
 	}
 	
 	public long berechneSteuereinnahmen() {
 		System.out.println("Berechne Steuereinnahmen von Metropolis...");
 		long summe = 0;
 		
-		summe += berechneKoerperschaftsteuer() 
-				+ berechneGewerbesteuer() 
-				+ berechneEinkommensteuer();
+		summe += berechneKoerperschaftsteuer() + berechneGewerbesteuer() + berechneEinkommensteuer();
 		
 		System.out.println("Steuereinnahmen von Metropolis: "+ summe);
 		return summe;
@@ -43,7 +44,20 @@ public class Finanzamt {
 		System.out.println("Berechne Einkommensteuer...");
 		int summe = 0;
 		
+		// Berechne Einkommensteuer fuer Buerger
+		if(isConsistent(buerger)) {
+			
+		}
 		
+		// Berechne Einkommensteuer fuer Personengesellschaften
+		if(isConsistent(persGes)) {
+			
+		}
+		
+		// Berechne Einkommensteuer fuer Schurken
+		if(isConsistent(schurken)) {
+			
+		}
 		
 		System.out.println("Einkommensteuer: " + summe + " MD");
 		return 0;
@@ -57,8 +71,26 @@ public class Finanzamt {
 	private int berechneGewerbesteuer() {
 		System.out.println("Berechne Gewerbesteuer...");
 		int summe = 0;
+		int buffer = 0;
+		
+		// Berechne fuer Personengesellschaften
+		if(isConsistent(persGes)) {
+			for (Personengesellschaft ges : persGes) {
+				buffer = gwst.berechne(ges.getGewinn()) - 1000;
+				
+				if(buffer > 0) {
+					summe += buffer;
+				}
+			}
+		}
 		
 		
+		// Berechne fuer Kapitalgesellschaften
+		if(isConsistent(kapGes)) {
+			for (Kapitalgesellschaft ges : kapGes) {
+				summe += gwst.berechne(ges.getGewinn());
+			}
+		}
 		
 		System.out.println("Gewerbesteuer: " + summe + " MD");
 		return 0;
