@@ -40,27 +40,33 @@ public class Finanzamt {
 	// Berechnung der Einkommensteuer:
 	// Eine progressive Steuer auf das Einkommen von Burgern, Personengesellschaften und Schurken. 
 	// Die Superhelden und Richter sind von der Einkommensteuer befreit, weil sie soviel gutes fur Metropolis tun.
-	private int berechneEinkommensteuer() {
+	private long berechneEinkommensteuer() {
 		System.out.println("Berechne Einkommensteuer...");
-		int summe = 0;
+		long summe = 0;
 		
 		// Berechne Einkommensteuer fuer Buerger
 		if(isConsistent(buerger)) {
-			
+			for (Buerger burgr : buerger) {
+				summe += eks.berechne(burgr.getEinkommen());
+			}
 		}
 		
 		// Berechne Einkommensteuer fuer Personengesellschaften
 		if(isConsistent(persGes)) {
-			
+			for (Personengesellschaft ges : persGes) {
+				summe += eks.berechne(ges.getGewinn());
+			}
 		}
 		
 		// Berechne Einkommensteuer fuer Schurken
 		if(isConsistent(schurken)) {
-			
+			for (Schurke schurke : schurken) {
+				summe += eks.berechne(schurke.getEinkommen());
+			}
 		}
 		
 		System.out.println("Einkommensteuer: " + summe + " MD");
-		return 0;
+		return summe;
 	}
 
 	// Berechnung der Gewerbesteuer:
@@ -68,10 +74,10 @@ public class Finanzamt {
 	// Naturliche Personen, d. h. Schurken und Buerger muessen diese Steuer nicht abfuhren.
 	// Personengesellschaften haben noch eine Steuerermaessigung von 1000 Metro-Dollar auf den
 	// Betrag der Steuer (nicht die Bemessungsgrundlage). Die Steuer kann hierbei niemals negativ werden.
-	private int berechneGewerbesteuer() {
+	private long berechneGewerbesteuer() {
 		System.out.println("Berechne Gewerbesteuer...");
-		int summe = 0;
-		int buffer = 0;
+		long summe = 0;
+		long buffer = 0;
 		
 		// Berechne fuer Personengesellschaften
 		if(isConsistent(persGes)) {
@@ -93,7 +99,7 @@ public class Finanzamt {
 		}
 		
 		System.out.println("Gewerbesteuer: " + summe + " MD");
-		return 0;
+		return summe;
 	}
 
 	// Berechnung der Koerperschaftsteuer:
@@ -103,16 +109,37 @@ public class Finanzamt {
 	// Da Schurken auch noch Einkommensteuer bezahlen mussen, werden Sie doppelt belastet
 	// was aber wegen ihres schlechten Charakters alle anderen Burger von Metropolis voll kommen OK finden. 
 	// Die einzelnen Steuern koennen nicht gegeneinander verrechnet werden sondern werden einfach aufsummiert.
-	private int berechneKoerperschaftsteuer() {
+	private long berechneKoerperschaftsteuer() {
 		System.out.println("Berechne Koerperschaftsteuer...");
-		int summe = 0;
+		long summe = 0;
 		
+		// Berechne Koerperschaftsteuer fuer Kapitalgesellschaften
+		if(isConsistent(kapGes)) {
+			for(Kapitalgesellschaft ges : kapGes) {
+				summe += kst.berechne(ges.getGewinn());
+			}
+		}
 		
+		// Berechne Koerperschaftsteuer fuer Syndikate
+		if(isConsistent(syndikate)) {
+			for(Syndikat syndikat : syndikate) {
+				
+				// Hole dass Einkommen aller Schurken im syndikat
+				int memberIncome = 0;
+				
+				for(Schurke mitglied : syndikat.getMitglieder()){
+					memberIncome += mitglied.getEinkommen();
+				}
+				
+				summe += kst.berechne(memberIncome);
+			}
+		}
 		
 		System.out.println("Koerperschaftsteuer: " + summe + " MD");
-		return 0;
+		return summe;
 	}
 	
+	// Teste ob Array initialisiert und mindestens 1 Eintrag lang ist
 	private boolean isConsistent(Object[] objects) {
 		if(objects != null && objects.length > 0) {
 			return true;
