@@ -54,6 +54,7 @@ public class JUnitTestEinkommensteuer {
     public void testBerechneStufe3() {
         assertTrue("Fehler beim berechnen von 80,000" , eks.berechne(80000)  == 19000);
         assertTrue("Fehler beim berechnen von 100,000", eks.berechne(100000) == 26000);
+        assertTrue("Fehler beim berechnen von 120,000", eks.berechne(120000) == 33000);
     }
     
 

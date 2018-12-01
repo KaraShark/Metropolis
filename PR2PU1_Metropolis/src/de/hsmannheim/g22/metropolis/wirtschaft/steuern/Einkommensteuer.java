@@ -2,7 +2,7 @@ package de.hsmannheim.g22.metropolis.wirtschaft.steuern;
 
 import java.util.Arrays;
 
-// Klasse für die Einkommenssteuer die die Methode der Steuerberechnung Implementiert.
+// Klasse fï¿½r die Einkommenssteuer die die Methode der Steuerberechnung Implementiert.
 // 
 // Steuerbeschreiung:
 // Eine progressive Steuer auf das Einkommen von Burgern, Personengesellschaften und Schurken. 
@@ -26,7 +26,7 @@ public class Einkommensteuer implements Steuer {
         else if(betrag <= 60000) {
             return (int) (((betrag - 20000) * EKS_STUFENSATZ[1]) + 2000);
         }
-        else if(betrag <= 110000) {
+        else if(betrag <= 120000) {
             return (int) (((betrag - 60000) * EKS_STUFENSATZ[2]) + 12000);
         }
         else {
