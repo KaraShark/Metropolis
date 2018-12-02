@@ -63,6 +63,7 @@ public class MetropolisMain {
 		// Große anzahl von Buergern
 		// Schurken/Helden ratio 1/4
 		// Grosse anzahl von Unternehmen
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Utopisches Metropolis<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
 		//MetropolisModell utopiaMetropolis = new MetropolisModell();
 		//for (int i = 0; i < 20; i++) {
 			//utopiaMetropolis.kampfhandlung();
