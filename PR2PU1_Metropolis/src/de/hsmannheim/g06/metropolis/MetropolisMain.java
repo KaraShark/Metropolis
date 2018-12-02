@@ -15,11 +15,47 @@ public class MetropolisMain {
 		// Normale Anzahl an Buergern
 		// Schurken/Helden ratio 2/3
 		// Normale Anzahl an Unternehmen
-		//MetropolisModell normalMetropolis = new MetropolisModell();
-				
-		//for (int i = 0; i < 20; i++) {
-			//normalMetropolis.kampfhandlung();
-		//}
+	    Buerger[] normaleBuerger = {   
+	        new Buerger("Peter Mueller", 50, 30000),
+            new Buerger("Kurt Berger", 31, 25000),
+            new Buerger("Manuel Meier", 26, 20000),
+            new Buerger("Steffen Burg", 19, 0),
+            new Buerger("Jens Peterson", 49, 40000),
+            new Buerger("Lorenz Thomson", 41, 35000),
+            new Buerger("James Mueller", 67, 100000),
+            new Buerger("Stefanie Mai", 33, 45000),
+            new Buerger("Helene Kurt", 64, 15000),
+            new Buerger("Olga Novic ", 81, 0)
+	    };
+	    Richter[] normaleRichter = { 
+	        new Richter("Werner Wahnsinn", 54, false),
+	        new Richter("Melanie Neuberg", 39, false),
+	        new Richter("Andreas Scheuer",43, true)
+	    };
+	    Superheld[] normaleSuperhelden = { 
+	        new Superheld("Feuermann", "Feuer","langsam"),
+	        new Superheld("Eismagier", "Eis")
+	    };
+	    Schurke[] normaleSchurke = { 
+	        new Schurke("Schurki","Eis",20000),
+	        new Schurke("Schurkos", "schnell", 35000),
+	        new Schurke("Schurklady", "schlau", 15000)
+	    };
+	    Syndikat[] normalesSyndikat = {
+	        new Syndikat("Die Dreisten Drei", normaleSchurke)
+	    };
+	    Kapitalgesellschaft[] normaleKapitalgesellschaft = {
+	        new Kapitalgesellschaft("Daimler AG", 5000000, normaleBuerger[1], normaleBuerger[2], normaleBuerger[5], normaleBuerger[8])
+	    };
+	    Personengesellschaft[] normalePersonengesellschaft = {
+	        new Personengesellschaft("Meier KG", 750000, normaleBuerger[3]),
+            new Personengesellschaft("Maler OHG", 450000, normaleBuerger[4])
+        };
+	    System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Normales Metropolis<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+		MetropolisModell normalMetropolis = new MetropolisModell(normaleBuerger, normaleRichter, normaleSchurke, normaleSuperhelden, normalePersonengesellschaft, normaleKapitalgesellschaft, normalesSyndikat);
+		for (int i = 0; i < 20; i++) {
+			normalMetropolis.kampfhandlung();
+		}
 		
 		// Utopisches Metropolis
 		// Metropolis geht es sehr gut, viele unternehmen und reiche bürger bescheren viele steuereinnahmen. 
@@ -95,6 +131,7 @@ public class MetropolisMain {
 		    new Kapitalgesellschaft("Soylent Inc", 4000000, dystBuerger[19], dystBuerger[20])
 		};
 		
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Dystopisches Metropolis<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
 		MetropolisModell dystopiaMetropolis = new MetropolisModell(dystBuerger, dystRichter, dystSchurken, dystHelden, dystPersGes, dystKapGes, dystSyndikate);
 		for (int i = 0; i < 20; i++) {
 			dystopiaMetropolis.kampfhandlung();

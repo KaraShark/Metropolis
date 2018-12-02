@@ -20,8 +20,8 @@ public class JUnitTestEinwohner {
     Superheld gertrud = new Superheld("Gertrud", new String[] { "Bierbauch", "Blitz" });
     Superheld luffy = new Superheld("Luffy", new String[] { "Gummi" });
 
-    @Test // teste die Daten der Bürger
-    public void testeDatenVonBürger() {
+    @Test // teste die Daten der Buerger
+    public void testeDatenVonBuerger() {
         assertEquals("Mustafa", mustafa.getName());
         assertEquals(22, mustafa.getAlter(), PRAEZISION);
         assertEquals(5, mustafa.getEinkommen(), PRAEZISION);
