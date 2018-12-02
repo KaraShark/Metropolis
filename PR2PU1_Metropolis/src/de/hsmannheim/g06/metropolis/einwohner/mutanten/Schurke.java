@@ -8,7 +8,7 @@ public class Schurke extends Mutant {
     }
 
     public Schurke(String name, String schwaeche, int einkommen) {
-        // name
+        super(name);
         this.schwaeche = schwaeche;
         this.einkommen = einkommen;
 

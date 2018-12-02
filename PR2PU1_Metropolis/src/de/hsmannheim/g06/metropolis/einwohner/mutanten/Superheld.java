@@ -7,7 +7,7 @@ public class Superheld extends Mutant {
     }
 
     public Superheld(String name, String[] superkraefte) {
-        // name
+        super(name);
         this.superkraefte = superkraefte;
     }
 
@@ -23,11 +23,7 @@ public class Superheld extends Mutant {
 
     }
 
-    // nicht ganz sicher
     public String[] getSuperkraefte() {
-        // for(int i=0;i<superkraefte.length;i++){
-        // System.out.print(superkraefte[i]);
-        // }
         return superkraefte;
     }
 }
