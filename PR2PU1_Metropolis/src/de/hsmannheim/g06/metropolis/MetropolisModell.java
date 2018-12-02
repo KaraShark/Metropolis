@@ -4,6 +4,7 @@ import de.hsmannheim.g06.metropolis.einwohner.menschen.Buerger;
 import de.hsmannheim.g06.metropolis.einwohner.menschen.Richter;
 import de.hsmannheim.g06.metropolis.einwohner.mutanten.Schurke;
 import de.hsmannheim.g06.metropolis.einwohner.mutanten.Superheld;
+import de.hsmannheim.g06.metropolis.wirtschaft.unternehmen.Kapitalgesellschaft;
 
 public class MetropolisModell {
     
@@ -21,17 +22,20 @@ public class MetropolisModell {
     Richter richter4 = new Richter("Patrick Neumann",41,true);
     
     //Superhelden
-    String[] superkraefte1 = {"Feuer","Fliegen"};
+    String[] superkraefte1 = {"Feuer","schlau"};
     Superheld superheld1 = new Superheld("Feuermann",superkraefte1);
     
-    String[] superkraefte2 = {"Eis"};
+    String[] superkraefte2 = {"Eis","langsam"};
     Superheld superheld2 = new Superheld("Eismann",superkraefte2);
     
     
     //Schurken
     Schurke schurke1 = new Schurke("Schurki","Feuer",20000);
-    Schurke schurke2 = new Schurke("Schurkos","Panzerung",100000);
-    Schurke schurke3 = new Schurke("Schurklady","Magie",50000);
+    Schurke schurke2 = new Schurke("Schurkos","langsam",100000);
+    Schurke schurke3 = new Schurke("Schurklady","dumm",50000);
+    
+    //Unternehmen
+    //Kapitalgesellschaft kg1 = new Kapitalgesellschaft("Daimler",2500000,);
     
     
 }
