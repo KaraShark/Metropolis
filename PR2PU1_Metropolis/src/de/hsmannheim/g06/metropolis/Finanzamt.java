@@ -37,9 +37,12 @@ public class Finanzamt {
 		return summe;
 	}
 	
-	// Berechnung der Einkommensteuer:
-	// Eine progressive Steuer auf das Einkommen von Burgern, Personengesellschaften und Schurken. 
-	// Die Superhelden und Richter sind von der Einkommensteuer befreit, weil sie soviel gutes fur Metropolis tun.
+	/**
+	 *   Berechnung der Einkommensteuer:
+         Eine progressive Steuer auf das Einkommen von Burgern, Personengesellschaften und Schurken. 
+         Die Superhelden und Richter sind von der Einkommensteuer befreit, weil sie soviel gutes fur Metropolis tun.
+	 * @return
+	 */
 	private long berechneEinkommensteuer() {
 		System.out.println("Berechne Einkommensteuer...");
 		long summe = 0;
@@ -68,12 +71,16 @@ public class Finanzamt {
 		System.out.println("Einkommensteuer: " + summe + " MD");
 		return summe;
 	}
-
-	// Berechnung der Gewerbesteuer:
-	// Eine lineare Steuer von 10 Prozent auf den Gewinn aller Unternehmen, unabhaengig von der Rechtsform. 
-	// Naturliche Personen, d. h. Schurken und Buerger muessen diese Steuer nicht abfuhren.
-	// Personengesellschaften haben noch eine Steuerermaessigung von 1000 Metro-Dollar auf den
-	// Betrag der Steuer (nicht die Bemessungsgrundlage). Die Steuer kann hierbei niemals negativ werden.
+	
+	
+	/**
+	 *   Berechnung der Gewerbesteuer:
+         Eine lineare Steuer von 10 Prozent auf den Gewinn aller Unternehmen, unabhaengig von der Rechtsform. 
+         Naturliche Personen, d. h. Schurken und Buerger muessen diese Steuer nicht abfuhren.
+         Personengesellschaften haben noch eine Steuerermaessigung von 1000 Metro-Dollar auf den
+         Betrag der Steuer (nicht die Bemessungsgrundlage). Die Steuer kann hierbei niemals negativ werden.
+	 * @return
+	 */
 	private long berechneGewerbesteuer() {
 		System.out.println("Berechne Gewerbesteuer...");
 		long summe = 0;
@@ -102,13 +109,16 @@ public class Finanzamt {
 		return summe;
 	}
 
-	// Berechnung der Koerperschaftsteuer:
-	// Sie muss nur von Kapitalgesellschaften und Schurken-Syndikaten abgefuhrt werden.
-	// Bei den Kapitalgesellschaften bemisst sie sich nach dem Gewinn,
-	// bei den Syndikaten nach der Summe der Einkommen aller in dem Syndikat organisierten Schurken.
-	// Da Schurken auch noch Einkommensteuer bezahlen mussen, werden Sie doppelt belastet
-	// was aber wegen ihres schlechten Charakters alle anderen Burger von Metropolis voll kommen OK finden. 
-	// Die einzelnen Steuern koennen nicht gegeneinander verrechnet werden sondern werden einfach aufsummiert.
+	/**
+	 *   Berechnung der Koerperschaftsteuer:
+         Sie muss nur von Kapitalgesellschaften und Schurken-Syndikaten abgefuhrt werden.
+         Bei den Kapitalgesellschaften bemisst sie sich nach dem Gewinn,
+         bei den Syndikaten nach der Summe der Einkommen aller in dem Syndikat organisierten Schurken.
+         Da Schurken auch noch Einkommensteuer bezahlen mussen, werden Sie doppelt belastet
+         was aber wegen ihres schlechten Charakters alle anderen Burger von Metropolis voll kommen OK finden. 
+         Die einzelnen Steuern koennen nicht gegeneinander verrechnet werden sondern werden einfach aufsummiert.
+	 * @return
+	 */
 	private long berechneKoerperschaftsteuer() {
 		System.out.println("Berechne Koerperschaftsteuer...");
 		long summe = 0;
@@ -139,7 +149,11 @@ public class Finanzamt {
 		return summe;
 	}
 	
-	// Teste ob Array initialisiert und mindestens 1 Eintrag lang ist
+	/**
+	 * Teste ob Array initialisiert und mindestens 1 Eintrag lang ist
+	 * @param objects
+	 * @return
+	 */
 	private boolean isConsistent(Object[] objects) {
 		if(objects != null && objects.length > 0) {
 			return true;

@@ -10,11 +10,13 @@ import de.hsmannheim.g06.metropolis.wirtschaft.unternehmen.Personengesellschaft;
 public class MetropolisMain {
 
 	public static void main(String[] args) {
-		// Ausgeglichenes Metropolis
-		// Metropolis geht es gut, es gibt genug Superhelden um die kleine Mehrzahl von Schurken in schach zu halten und wenige korrupte Richter
-		// Normale Anzahl an Buergern
-		// Schurken/Helden ratio 2/3
-		// Normale Anzahl an Unternehmen
+		/**
+		 *  Ausgeglichenes Metropolis
+             Metropolis geht es gut, es gibt genug Superhelden um die kleine Mehrzahl von Schurken in schach zu halten und wenige korrupte Richter
+             Normale Anzahl an Buergern
+             Schurken/Helden ratio 2/3
+             Normale Anzahl an Unternehmen
+		 */
 	    Buerger[] normaleBuerger = {   
 	        new Buerger("Peter Mueller", 50, 30000),
             new Buerger("Kurt Berger", 31, 25000),
@@ -58,9 +60,9 @@ public class MetropolisMain {
 		}
 		
 		// Utopisches Metropolis
-		// Metropolis geht es sehr gut, viele unternehmen und reiche bürger bescheren viele steuereinnahmen. 
+		// Metropolis geht es sehr gut, viele unternehmen und reiche bï¿½rger bescheren viele steuereinnahmen. 
 		// Durch das harte durchgreifen von vielen nicht korrupten richtern gibt es fast keine Schurken.
-		// Große anzahl von Buergern
+		// Groï¿½e anzahl von Buergern
 		// Schurken/Helden ratio 1/4
 		// Grosse anzahl von Unternehmen
 		//MetropolisModell utopiaMetropolis = new MetropolisModell();
@@ -68,14 +70,16 @@ public class MetropolisMain {
 			//utopiaMetropolis.kampfhandlung();
 		//}
 
-		// Dystopisches Metropolis
-		// Professor Xavier hat schon befuerhtet dass Schurken und Syndikate Metropolis in ihre finger bekommen. 
-		// Zudem hat eine ueberpopulation an menschen dafuer gesorgt dass Nahrung und Wasser mangelwahre sind.
-		// Ein ominoeser Konzern, der sein Geld mit dem verkauf von gelben und guenen Rationsriegeln macht hat eine Monopolstellung der Unternehmen.
-		// Die Richter sind ein korruptes Pack auf der seite der Konzerne und Schurken.
-		// Riesige anzahl an Buergern
-		// Schurken/Helden ratio 1/8
-		// Ein Ominoeses Kapitalunternehmen
+		/**
+		 *  Dystopisches Metropolis
+             Professor Xavier hat schon befuerhtet dass Schurken und Syndikate Metropolis in ihre finger bekommen. 
+             Zudem hat eine ueberpopulation an menschen dafuer gesorgt dass Nahrung und Wasser mangelwahre sind.
+             Ein ominoeser Konzern, der sein Geld mit dem verkauf von gelben und guenen Rationsriegeln macht hat eine Monopolstellung der Unternehmen.
+             Die Richter sind ein korruptes Pack auf der seite der Konzerne und Schurken.
+             Riesige anzahl an Buergern
+             Schurken/Helden ratio 1/8
+             Ein Ominoeses Kapitalunternehmen
+		 */
 		Buerger[] dystBuerger = {
 				new Buerger("Kurt Berger", 85, 20000),
 				new Buerger("Marc Bauer", 21, 30500),
