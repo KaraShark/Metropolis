@@ -13,7 +13,9 @@ public class Superheld extends Mutant {
 
     public boolean kaempfe(Schurke schurke) {
         boolean gewonnen = false;
-
+        
+        System.out.println();
+        
         for (int i = 0; i < superkraefte.length; i++) {
             if (superkraefte[i].equals(schurke.getSchwaeche())) {
                 gewonnen = true;

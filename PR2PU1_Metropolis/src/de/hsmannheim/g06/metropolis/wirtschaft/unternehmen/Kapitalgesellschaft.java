@@ -7,7 +7,7 @@ public class Kapitalgesellschaft extends Unternehmen {
     
     public Kapitalgesellschaft(){ }
     
-    public Kapitalgesellschaft(String name, int gewinn, Buerger[] gesellschaftler){
+    public Kapitalgesellschaft(String name, int gewinn, Buerger... gesellschaftler){
        super(name,gewinn);
        this.gesellschaftler = gesellschaftler;
     }
