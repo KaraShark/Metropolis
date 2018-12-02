@@ -65,11 +65,45 @@ public class MetropolisMain {
 		// Gro�e anzahl von Buergern
 		// Schurken/Helden ratio 1/4
 		// Grosse anzahl von Unternehmen
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Utopisches Metropolis<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
-		//MetropolisModell utopiaMetropolis = new MetropolisModell();
-		//for (int i = 0; i < 20; i++) {
-			//utopiaMetropolis.kampfhandlung();
-		//}
+		Buerger[] utopBuerger = { 
+		    new Buerger("Peter Mueller", 50, 300000), new Buerger("Kurt Berger", 31, 250000),
+	        new Buerger("Manuel Meier", 26, 200000), new Buerger("Steffen Burg", 19, 1000000),
+	        new Buerger("Jens Peterson", 49, 400000), new Buerger("Lorenz Thomson", 41, 350000),
+	        new Buerger("James Mueller", 67, 150000), new Buerger("Stefanie Mai", 33, 450000),
+	        new Buerger("Helene Kurt", 64, 250000), new Buerger("Olga Novic ", 81, 500000) };
+
+	    Richter[] utopRichter = { 
+	        new Richter("Werner Wahnsinn", 54, false), 
+	        new Richter("Melanie Neuberg", 39, false),
+	        new Richter("Andreas Scheuer", 43, false) 
+	    };
+	    Superheld[] utopSuperhelden = { 
+	        new Superheld("Heatmaster", "Hitze", "Pulverisierung" ),
+	        new Superheld("Firestar", "Hitze", "Feuer"),
+	        new Superheld("Brutzli","Hitze", "Lavakugel") 
+	    };
+	    Schurke[] utopSchurken = { 
+	        new Schurke("Heisser Bube", "Hitze", 1000), 
+	        new Schurke("Heisse Dame", "Hitze", 750) 
+	    };
+	    Syndikat[] utopSyndikat = { 
+	        new Syndikat("Die armen Brutzler", utopSchurken[0], utopSchurken[1]) 
+	    };
+	    Personengesellschaft[] utopPersGes = {
+	        new Personengesellschaft("Honolulu", utopBuerger[0].getEinkommen(), utopBuerger[0]),
+	        new Personengesellschaft("Mandala AG", utopBuerger[8].getEinkommen(), utopBuerger[8]),
+	        new Personengesellschaft("Dundrasil GmbH", utopBuerger[4].getEinkommen(), utopBuerger[4]) 
+	    };
+
+	    Kapitalgesellschaft[] utopKapGes = {
+	            new Kapitalgesellschaft("Shinra Inc", 10000000, utopBuerger[3], utopBuerger[9]) };
+
+	    System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Utopisches Metropolis<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+	    MetropolisModell utopiaMetropolis = new MetropolisModell(utopBuerger, utopRichter, utopSchurken, utopSuperhelden, utopPersGes, utopKapGes, utopSyndikat);
+	    for(int i = 0; i < 20; i++) {
+	        utopiaMetropolis.kampfhandlung();
+	    }
+		
 
 		/**
 		 *  Dystopisches Metropolis
