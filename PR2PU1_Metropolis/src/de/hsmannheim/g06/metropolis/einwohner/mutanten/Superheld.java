@@ -6,7 +6,7 @@ public class Superheld extends Mutant {
     public Superheld() {
     }
 
-    public Superheld(String name, String[] superkraefte) {
+    public Superheld(String name, String... superkraefte) {
         super(name);
         this.superkraefte = superkraefte;
     }

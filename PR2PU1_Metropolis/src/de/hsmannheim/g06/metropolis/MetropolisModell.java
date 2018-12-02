@@ -20,22 +20,25 @@ public class MetropolisModell {
 	
 	private Finanzamt finanzamt;
 	
-	public MetropolisModell(Buerger[] buerger, Richter[] richter, Schurke[] schurken, Superheld[] superhelden, Personengesellschaft[] persoenengesellschaften, Kapitalgesellschaft[] kapitalgesellschaften) {
+	public MetropolisModell(Buerger[] buerger, Richter[] richter, Schurke[] schurken, Superheld[] superhelden, Personengesellschaft[] persoenengesellschaften, Kapitalgesellschaft[] kapitalgesellschaften, Syndikat[] syndikate) {
 		this.buerger = buerger;
 		this.richter = richter;
 		this.schurken = schurken;
 		this.superhelden = superhelden;
 		this.persGesellschaften = persoenengesellschaften;
 		this.kapGesellschaften = kapitalgesellschaften;
+		this.syndikate = syndikate;
 		
 		finanzamt = new Finanzamt(this.buerger, this.schurken, this.syndikate, this.kapGesellschaften, this.persGesellschaften);
 		finanzamt.berechneSteuereinnahmen();
 	}
 	
-	public void kampfhandlung(Superheld superheld, Schurke schurke) {
+	public void kampfhandlung() {
+		Superheld superheld = superhelden[new Random().nextInt(superhelden.length)]; 
+		Schurke schurke = schurken[new Random().nextInt(schurken.length)];
 		boolean hatSchurkenBesiegt = false;
 		
-		System.out.println(superheld.getName() + " versucht " + schurke.getName() + "aufzuhalten...");
+		System.out.println(superheld.getName() + " versucht " + schurke.getName() + " aufzuhalten...");
 		hatSchurkenBesiegt = superheld.kaempfe(schurke);
 		
 		if(hatSchurkenBesiegt) {
