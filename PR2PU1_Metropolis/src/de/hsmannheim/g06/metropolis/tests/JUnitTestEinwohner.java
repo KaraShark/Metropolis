@@ -20,31 +20,46 @@ public class JUnitTestEinwohner {
     Superheld gertrud = new Superheld("Gertrud", new String[] { "Bierbauch", "Blitz" });
     Superheld luffy = new Superheld("Luffy", new String[] { "Gummi" });
 
-    @Test // teste die Daten der Buerger
+    /**
+     * Testet die Daten der Buerger
+     */
+    @Test 
     public void testeDatenVonBuerger() {
         assertEquals("Markus", buerger.getName());
         assertEquals(22, buerger.getAlter(), PRAEZISION);
         assertEquals(287, buerger.getEinkommen(), PRAEZISION);
     }
 
-    @Test // teste kaempfe von Helden initiiert
+    /**
+     * Testet kaempfe von Helden initiiert
+     */
+    @Test 
     public void testeKaempfeHeldGegenSchurke() {
         assertTrue(gertrud.kaempfe(manfred));
         assertFalse(gertrud.kaempfe(darklord));
     }
-
-    @Test // teste kaempfe von Schurken initiiert
+    
+    /**
+     * Testet kaempfe von Schurken initiiert
+     */
+    @Test 
     public void testeKaempfeSchurkeGegenHeld() {
         assertTrue(captainevil.kaempfe(luffy));
         assertFalse(manfred.kaempfe(gertrud));
     }
 
-    @Test // teste verurteilen von korrupten Richter
+    /**
+     * Testet verurteilen von korrupten Richter
+     */
+    @Test 
     public void testeKorrupterRichter() {
         assertFalse(korrupterRichter.verurteile(robotinator));
     }
 
-    @Test // teste verurteilen von nicht korrupten Richter
+    /**
+     * Testet verurteilen von nicht korrupten Richter
+     */
+    @Test 
     public void testeNichtKorrupterRichter() {
         assertTrue(nichtKorrupterRichter.verurteile(manfred));
     }
