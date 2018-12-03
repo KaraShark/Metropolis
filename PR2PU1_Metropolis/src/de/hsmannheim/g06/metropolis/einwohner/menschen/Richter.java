@@ -28,6 +28,7 @@ public class Richter extends Mensch {
         return false;
     }
     
+    /*
     public static void main(String[] args){
         Richter richter1 = new Richter("Peter",50,true);
         Schurke schurke1 = new Schurke("Schurkii","Feuer",1000);
@@ -35,5 +36,5 @@ public class Richter extends Mensch {
         System.out.println(richter1.getIstKorrupt());
         System.out.println(richter1.verurteile(schurke1));
         
-    }
+    }*/
 }
