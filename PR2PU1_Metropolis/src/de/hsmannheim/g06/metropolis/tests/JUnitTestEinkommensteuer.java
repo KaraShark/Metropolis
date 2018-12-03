@@ -14,7 +14,7 @@ public class JUnitTestEinkommensteuer {
     
     Einkommensteuer eks = new Einkommensteuer();
     /**
-     * Tested die Methode die den gesammten Steuersatz herausgibt
+     * Testet die Methode die den gesammten Steuersatz herausgibt
      */
     @Test 
     public void testEKSSTufensatz() {
@@ -22,7 +22,7 @@ public class JUnitTestEinkommensteuer {
     }
     
     /**
-     * Tested die Methode die einzelne Steuersaetze nach Stufe herausgibt
+     * Testet die Methode die einzelne Steuersaetze nach Stufe herausgibt
      */
     @Test 
     public void testEKSGetStufe() {
@@ -32,7 +32,7 @@ public class JUnitTestEinkommensteuer {
     }
     
     /**
-     *  Testet die Methode bereche auf Randfaelle
+     *  Testet die Methode berechne auf Randfaelle
      */
     @Test 
     public void testBerechneRandfaelle() {

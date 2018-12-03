@@ -31,6 +31,7 @@ public class MetropolisModell {
 		
 		finanzamt = new Finanzamt(this.buerger, this.schurken, this.syndikate, this.kapGesellschaften, this.persGesellschaften);
 		finanzamt.berechneSteuereinnahmen();
+		System.out.println("");
 	}
 	
 	public void kampfhandlung() {
@@ -38,7 +39,8 @@ public class MetropolisModell {
 		Schurke schurke = schurken[new Random().nextInt(schurken.length)];
 		boolean hatSchurkenBesiegt = false;
 		
-		System.out.println(superheld.getName() + " versucht " + schurke.getName() + " aufzuhalten...");
+		System.out.println("");
+		System.out.print(superheld.getName() + " versucht " + schurke.getName() + " aufzuhalten...");
 		hatSchurkenBesiegt = superheld.kaempfe(schurke);
 		
 		if(hatSchurkenBesiegt) {

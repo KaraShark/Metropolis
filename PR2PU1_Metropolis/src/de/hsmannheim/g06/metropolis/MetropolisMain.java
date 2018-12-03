@@ -35,13 +35,14 @@ public class MetropolisMain {
 	        new Richter("Andreas Scheuer",43, true)
 	    };
 	    Superheld[] normaleSuperhelden = { 
-	        new Superheld("Feuermann", "Feuer","langsam"),
-	        new Superheld("Eismagier", "Eis")
+	        new Superheld("Feuermann", "Feuer"),
+	        new Superheld("Eismagier", "Eis","Beweglichkeit"),
+	        new Superheld("Gummimann", "Beweglichkeit")
 	    };
 	    Schurke[] normaleSchurke = { 
 	        new Schurke("Schurki","Eis",20000),
-	        new Schurke("Schurkos", "schnell", 35000),
-	        new Schurke("Schurklady", "schlau", 15000)
+	        new Schurke("Schurkos", "Beweglichkeit", 35000),
+	        new Schurke("Schurklady", "Feuer", 15000)
 	    };
 	    Syndikat[] normalesSyndikat = {
 	        new Syndikat("Die Dreisten Drei", normaleSchurke)

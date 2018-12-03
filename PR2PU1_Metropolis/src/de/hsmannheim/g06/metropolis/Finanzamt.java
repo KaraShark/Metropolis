@@ -33,7 +33,7 @@ public class Finanzamt {
 		
 		summe += berechneKoerperschaftsteuer() + berechneGewerbesteuer() + berechneEinkommensteuer();
 		
-		System.out.println("Steuereinnahmen von Metropolis: "+ summe);
+		System.out.println("Steuereinnahmen von Metropolis: "+ summe + " MD");
 		return summe;
 	}
 	
